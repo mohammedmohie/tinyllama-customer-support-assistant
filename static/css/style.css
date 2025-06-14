@@ -1,0 +1,339 @@
+/* Customer Support AI Assistant Styles */
+
+:root {
+    --primary-color: #0d6efd;
+    --secondary-color: #6c757d;
+    --success-color: #198754;
+    --info-color: #0dcaf0;
+    --warning-color: #ffc107;
+    --danger-color: #dc3545;
+    --light-color: #f8f9fa;
+    --dark-color: #212529;
+}
+
+body {
+    background-color: #f8f9fa;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Chat Container */
+.chat-container {
+    height: calc(100vh - 200px);
+    display: flex;
+    flex-direction: column;
+}
+
+.chat-messages {
+    flex: 1;
+    overflow-y: auto;
+    padding: 20px;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+}
+
+/* Message Styles */
+.message {
+    display: flex;
+    margin-bottom: 20px;
+    animation: fadeIn 0.3s ease-in;
+}
+
+.message-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+    font-size: 16px;
+    color: white;
+}
+
+.message-content {
+    flex: 1;
+    max-width: 70%;
+}
+
+.message-content p {
+    background: white;
+    padding: 15px;
+    border-radius: 15px;
+    margin: 0 0 5px 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    line-height: 1.4;
+}
+
+/* User Message */
+.user-message {
+    flex-direction: row-reverse;
+}
+
+.user-message .message-avatar {
+    background: var(--primary-color);
+    margin-right: 0;
+    margin-left: 15px;
+}
+
+.user-message .message-content {
+    text-align: right;
+}
+
+.user-message .message-content p {
+    background: var(--primary-color);
+    color: white;
+    margin-left: auto;
+}
+
+/* AI Message */
+.ai-message .message-avatar {
+    background: var(--success-color);
+}
+
+.ai-message .message-content p {
+    background: white;
+    color: var(--dark-color);
+}
+
+/* Typing Indicator */
+.typing-indicator {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    background: white;
+    border-radius: 15px;
+    margin-bottom: 5px;
+}
+
+.typing-dots {
+    display: flex;
+    gap: 4px;
+}
+
+.typing-dots span {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--secondary-color);
+    animation: typing 1.4s infinite ease-in-out;
+}
+
+.typing-dots span:nth-child(1) { animation-delay: -0.32s; }
+.typing-dots span:nth-child(2) { animation-delay: -0.16s; }
+
+@keyframes typing {
+    0%, 80%, 100% {
+        transform: scale(0);
+        opacity: 0.5;
+    }
+    40% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Performance Stats */
+.performance-stats {
+    font-size: 0.9em;
+}
+
+.performance-stats .d-flex {
+    margin-bottom: 8px;
+}
+
+/* Sample Questions */
+.sample-question {
+    text-align: left;
+    font-size: 0.85em;
+}
+
+.sample-question:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Cards */
+.card {
+    border: none;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    border-radius: 10px;
+}
+
+.card-header {
+    background: linear-gradient(135deg, var(--primary-color), #0056b3);
+    color: white;
+    border-radius: 10px 10px 0 0 !important;
+    border: none;
+}
+
+/* Navbar */
+.navbar-brand {
+    font-weight: 600;
+    font-size: 1.3em;
+}
+
+/* Form Controls */
+.form-control:focus,
+.form-select:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.25);
+}
+
+/* Buttons */
+.btn {
+    border-radius: 8px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.btn:hover {
+    transform: translateY(-1px);
+}
+
+/* Analytics Page */
+.analytics-card {
+    transition: transform 0.2s ease;
+}
+
+.analytics-card:hover {
+    transform: translateY(-2px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .chat-container {
+        height: calc(100vh - 150px);
+    }
+
+    .message-content {
+        max-width: 85%;
+    }
+
+    .chat-messages {
+        padding: 15px;
+    }
+
+    .message-content p {
+        padding: 12px;
+        font-size: 0.9em;
+    }
+}
+
+/* Loading States */
+.btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.spinner-border-sm {
+    width: 1rem;
+    height: 1rem;
+}
+
+/* Custom Scrollbar */
+.chat-messages::-webkit-scrollbar {
+    width: 6px;
+}
+
+.chat-messages::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.chat-messages::-webkit-scrollbar-thumb {
+    background: rgba(0,0,0,0.2);
+    border-radius: 3px;
+}
+
+.chat-messages::-webkit-scrollbar-thumb:hover {
+    background: rgba(0,0,0,0.3);
+}
+
+/* Status Badges */
+.badge {
+    font-size: 0.75em;
+    padding: 0.35em 0.65em;
+}
+
+/* Model Status Colors */
+.model-status-loaded {
+    background-color: var(--success-color) !important;
+}
+
+.model-status-demo {
+    background-color: var(--warning-color) !important;
+}
+
+.model-status-error {
+    background-color: var(--danger-color) !important;
+}
+
+/* Chart Containers */
+.chart-container {
+    position: relative;
+    margin: 20px 0;
+}
+
+/* Conversation List */
+.conversation-item {
+    border-left: 4px solid var(--primary-color);
+    padding-left: 15px;
+    margin-bottom: 15px;
+}
+
+.conversation-item:last-child {
+    margin-bottom: 0;
+}
+
+/* Utility Classes */
+.text-truncate-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --light-color: #343a40;
+        --dark-color: #070a0c;
+    }
+
+    body {
+        background-color: #1a1a1a;
+        color: #f8f9fa;
+    }
+
+    .card {
+        background-color: #2d3748;
+        color: #f8f9fa;
+    }
+
+    .chat-messages {
+        background: linear-gradient(135deg, #2d3748 0%, #4a5568 100%);
+    }
+
+    .message-content p {
+        background: #4a5568;
+        color: #f8f9fa;
+    }
+
+    .user-message .message-content p {
+        background: var(--primary-color);
+        color: white;
+    }
+}

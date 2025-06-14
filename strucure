@@ -1,0 +1,24 @@
+customer_support_ai/
+├── app.py                 # Flask web application
+├── fine_tune_model.py     # Model fine-tuning script
+├── inference.py           # Inference engine
+├── data_processor.py      # Data processing utilities
+├── config.py             # Configuration settings
+├── requirements.txt       # Python dependencies
+├── static/
+│   ├── css/
+│   │   └── style.css     # Custom styles
+│   └── js/
+│       └── main.js       # Frontend JavaScript
+├── templates/
+│   ├── index.html        # Main chat interface
+│   ├── analytics.html    # Analytics dashboard
+│   └── results.html      # Results page
+├── data/
+│   ├── samples/          # After start training
+│   ├── sample_data.jsonl # Sample training data
+│   └── README.md         # Data documentation
+└── models/
+    ├── checkpoints/      # After start training
+    ├── tinyllama-customer-support/ # Fine-tuned model
+    └── README.md         # Model documentation
