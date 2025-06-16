@@ -16,7 +16,7 @@ This is a complete AI project that fine-tunes TinyLlama 1.1B for customer suppor
 ## 🛠 Technical Stack
 
 ### Core AI Components
-- **Model**: TinyLlama 1.1B (unsloth/tinyllama-chat-bnb-4bit)
+- **Model**: TinyLlama 1.1B (TinyLlama/TinyLlama-1.1B-Chat-v1.0)
 - **Fine-tuning**: Hugging Face Transformers + LoRA (via PEFT)
 - **Training Framework**: Transformers + TRL
 
